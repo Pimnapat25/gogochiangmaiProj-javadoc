@@ -1,0 +1,259 @@
+/*
+ * GoGo Chiang Mai — JavaDoc theme
+ * Palette taken straight from the game:
+ *   --bg-deep      : the gameplay black backdrop
+ *   --panel-gray   : Win95 dialog gray (#c0c0c0)
+ *   --title-navy   : the level-intro title-bar gradient (#000080 -> #1084d0)
+ *   --accent-red   : HP / lose screen
+ *   --accent-gold  : Level 2 difficulty / win screen
+ *   --accent-pink  : Level 4 difficulty
+ *   --accent-lime  : Level 1 (EASY)
+ *   --accent-orange: Level 3 (HARD)
+ */
+
+:root {
+    --bg-deep:        #0c0c1a;
+    --bg-panel:       #181830;
+    --panel-gray:     #c0c0c0;
+    --panel-gray-lt:  #d4d0c8;
+    --title-navy-1:   #000080;
+    --title-navy-2:   #1084d0;
+    --accent-red:     #ff5252;
+    --accent-gold:    #ffd700;
+    --accent-pink:    #ff69b4;
+    --accent-lime:    #32cd32;
+    --accent-orange:  #ff6347;
+    --text-main:      #f4f4f4;
+    --text-muted:     #b0b0c5;
+    --code-bg:        #20203a;
+    --border-bevel-l: #ffffff;
+    --border-bevel-d: #606060;
+}
+
+/* ── Page chrome ─────────────────────────────────────────────────────────── */
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: "Courier New", "Consolas", monospace;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+a, a:visited {
+    color: #6cb3ff;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+/* ── Top header bar — looks like a Win95 title bar ───────────────────────── */
+
+header.flex-header,
+.top-nav,
+.bottom-nav {
+    background: linear-gradient(to right, var(--title-navy-1), var(--title-navy-2));
+    color: #fff;
+    border-top: 2px solid var(--border-bevel-l);
+    border-bottom: 2px solid var(--border-bevel-d);
+}
+
+.top-nav a,
+.bottom-nav a,
+.sub-nav a,
+.skip-nav,
+.nav-list-search label {
+    color: #ffffff !important;
+}
+.top-nav a:hover,
+.bottom-nav a:hover {
+    color: var(--accent-gold) !important;
+}
+
+.sub-nav {
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--title-navy-2);
+}
+
+/* ── Headings — the retro game label feel ────────────────────────────────── */
+
+h1.title,
+.header h1,
+.header .title,
+main h1 {
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 0 #000, 0 0 12px rgba(255, 215, 0, 0.4);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+h2, h3, h4, h5, h6,
+.title-row h1 {
+    color: #6cb3ff;
+    border-bottom: 1px dashed var(--title-navy-2);
+    padding-bottom: 4px;
+    margin-top: 1.6em;
+}
+
+/* ── Class / package summary panels — Win95 panels ───────────────────────── */
+
+.summary-table,
+.details-table,
+.member-summary,
+.constants-summary,
+.serialized-class-details,
+.requires-summary,
+.uses-summary,
+.provides-summary,
+.packages-summary,
+.modules-summary,
+.deprecated-summary {
+    background: var(--panel-gray-lt);
+    color: #111;
+    border: 2px solid var(--border-bevel-d);
+    border-top-color: var(--border-bevel-l);
+    border-left-color: var(--border-bevel-l);
+    border-radius: 0;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+}
+
+.summary-table caption,
+.details-table caption,
+.title-row {
+    background: linear-gradient(to right, var(--title-navy-1), var(--title-navy-2));
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: bold;
+    border: none;
+}
+.summary-table caption span,
+.details-table caption span,
+.caption span {
+    background: transparent !important;
+    color: #fff !important;
+    padding: 0 !important;
+}
+
+.summary-table > div,
+.details-table > div {
+    border-color: #999;
+}
+
+.col-first, .col-second, .col-last,
+.col-summary-item-name,
+.col-constructor-name {
+    color: #111;
+}
+
+.col-first a,
+.col-summary-item-name a {
+    color: var(--title-navy-1) !important;
+    font-weight: bold;
+}
+.col-first a:hover {
+    color: var(--accent-orange) !important;
+}
+
+.row-color, .alt-color {
+    background: #e8e4dc;
+}
+.row-color.alt-color, .alt-color.row-color { background: var(--panel-gray-lt); }
+
+/* ── Class header block ──────────────────────────────────────────────────── */
+
+.module-signature, .package-signature, .type-signature, .member-signature {
+    background: var(--code-bg);
+    color: #f4f4f4;
+    border-left: 4px solid var(--accent-gold);
+    padding: 10px 14px;
+    border-radius: 0;
+}
+.modifiers, .return-type { color: var(--accent-pink); }
+.element-name { color: var(--accent-gold); font-weight: bold; }
+.parameters .arguments, .parameters { color: #6cb3ff; }
+.exceptions { color: var(--accent-red); }
+
+/* ── Inline code & block code ───────────────────────────────────────────── */
+
+code, tt, .source-container, pre {
+    font-family: "Courier New", "Consolas", monospace;
+    background: var(--code-bg);
+    color: #ffe97a;
+    border: 1px solid var(--title-navy-2);
+    padding: 1px 5px;
+    border-radius: 2px;
+}
+pre {
+    padding: 10px 14px;
+    border-left: 4px solid var(--accent-gold);
+}
+
+.block code, .description code {
+    color: #ffe97a;
+}
+
+/* ── Member detail boxes ─────────────────────────────────────────────────── */
+
+section.detail, .member-list, .description {
+    background: var(--bg-panel);
+    border: 1px solid var(--title-navy-2);
+    border-radius: 0;
+    padding: 12px 16px;
+    margin: 14px 0;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+section.detail h3, section.detail h4 {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+}
+
+dt {
+    color: var(--accent-pink);
+    font-weight: bold;
+    margin-top: 6px;
+}
+dd { color: var(--text-main); }
+
+/* ── Tags (Parameters / Returns / See Also / Throws) ─────────────────────── */
+
+.notes dt, .notes-block dt,
+.notes b, .notes strong {
+    color: var(--accent-lime);
+}
+
+/* ── Index / search ──────────────────────────────────────────────────────── */
+
+#search-input,
+.ui-autocomplete {
+    background: #fff;
+    color: #000;
+    border: 2px solid var(--border-bevel-d);
+}
+.ui-autocomplete .ui-state-focus,
+.ui-autocomplete .ui-menu-item-wrapper.ui-state-active {
+    background: var(--title-navy-2);
+    color: #fff;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+footer, .legal-copy {
+    background: var(--bg-panel);
+    color: var(--text-muted);
+    border-top: 2px solid var(--title-navy-2);
+    padding: 10px 16px;
+    font-size: 12px;
+}
+
+/* ── Misc ────────────────────────────────────────────────────────────────── */
+
+.deprecation-block, .deprecation-comment {
+    background: rgba(255, 99, 71, 0.12);
+    border-left: 4px solid var(--accent-red);
+    color: #ffd0c8;
+    padding: 8px 12px;
+}
+
+hr { border-color: var(--title-navy-2); }
