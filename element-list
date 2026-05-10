@@ -1,0 +1,13 @@
+application
+gui.battle
+gui.component
+gui.screen
+gui.util
+io.parser
+io.resource
+logic.character
+logic.character.boy
+logic.character.girl
+logic.contract
+logic.entity
+logic.world
