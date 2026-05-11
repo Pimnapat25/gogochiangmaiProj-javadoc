@@ -91,6 +91,11 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">CharacterProfile</span></div>
+<div class="block">Read-only description of one selectable scholar.
+
+ <p>Implemented by <a href="BaseCharacterProfile.html" title="class in logic.character"><code>BaseCharacterProfile</code></a> and its concrete subclasses.
+ All resource paths are relative to the classpath root (e.g.
+ <code>"images/character/boy_walk.png"</code>).</p></div>
 </div>
 </section>
 <section class="summary">
@@ -108,40 +113,55 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#displayName()" class="member-name-link">displayName</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Display name shown in the character selection screen.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#element()" class="member-name-link">element</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Element key that determines spell damage, slow, and visual effect
+ (<code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, or <code>"purple"</code>).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#focusGainPerCorrectAnswer()" class="member-name-link">focusGainPerCorrectAnswer</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Amount of focus gained each time the player answers a question correctly.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#gender()" class="member-name-link">gender</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gender key used for resource path construction (<code>"boy"</code> or <code>"girl"</code>).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Unique identifier for this character (e.g.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#maxHp()" class="member-name-link">maxHp</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Maximum hit points for this character.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#npcResource()" class="member-name-link">npcResource</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Top-down NPC sprite — shown in the tile map gameplay.</div>
+<div class="block">Top-down NPC sprite path — used for the student tile on the game board.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#portraitResource()" class="member-name-link">portraitResource</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Walk sprite sheet — shown in character select and battle.</div>
+<div class="block">Walk sprite sheet path — shown in character select and battle screens.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#spellResource()" class="member-name-link">spellResource</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Spell-cast sprite sheet — shown in character select element cards.</div>
+<div class="block">Spell-cast sprite sheet path — shown in character select element cards.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#walkResource()" class="member-name-link">walkResource</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Walk animation sprite sheet path.</div>
+</div>
 </div>
 </div>
 </div>
@@ -161,6 +181,11 @@ loadScripts(document, 'script');</script>
 <h3>id</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
+<div class="block">Unique identifier for this character (e.g. <code>"boy-blue"</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>character ID string</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -169,6 +194,11 @@ loadScripts(document, 'script');</script>
 <h3>displayName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">displayName</span>()</div>
+<div class="block">Display name shown in the character selection screen.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>localised display name</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -177,7 +207,11 @@ loadScripts(document, 'script');</script>
 <h3>portraitResource</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">portraitResource</span>()</div>
-<div class="block">Walk sprite sheet — shown in character select and battle.</div>
+<div class="block">Walk sprite sheet path — shown in character select and battle screens.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -186,7 +220,11 @@ loadScripts(document, 'script');</script>
 <h3>spellResource</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">spellResource</span>()</div>
-<div class="block">Spell-cast sprite sheet — shown in character select element cards.</div>
+<div class="block">Spell-cast sprite sheet path — shown in character select element cards.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -195,6 +233,11 @@ loadScripts(document, 'script');</script>
 <h3>walkResource</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">walkResource</span>()</div>
+<div class="block">Walk animation sprite sheet path.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -203,7 +246,11 @@ loadScripts(document, 'script');</script>
 <h3>npcResource</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">npcResource</span>()</div>
-<div class="block">Top-down NPC sprite — shown in the tile map gameplay.</div>
+<div class="block">Top-down NPC sprite path — used for the student tile on the game board.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -212,6 +259,11 @@ loadScripts(document, 'script');</script>
 <h3>gender</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">gender</span>()</div>
+<div class="block">Gender key used for resource path construction (<code>"boy"</code> or <code>"girl"</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>gender string</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -220,6 +272,12 @@ loadScripts(document, 'script');</script>
 <h3>element</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">element</span>()</div>
+<div class="block">Element key that determines spell damage, slow, and visual effect
+ (<code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, or <code>"purple"</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>element string</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -228,6 +286,11 @@ loadScripts(document, 'script');</script>
 <h3>maxHp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">maxHp</span>()</div>
+<div class="block">Maximum hit points for this character.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>max HP</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -236,6 +299,11 @@ loadScripts(document, 'script');</script>
 <h3>focusGainPerCorrectAnswer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">focusGainPerCorrectAnswer</span>()</div>
+<div class="block">Amount of focus gained each time the player answers a question correctly.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>focus gain per correct answer</dd>
+</dl>
 </div>
 </section>
 </li>

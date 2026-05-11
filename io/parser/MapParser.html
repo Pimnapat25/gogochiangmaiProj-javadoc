@@ -88,6 +88,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MapParser</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Parses a plain-text level map file from the classpath into a <a href="../../logic/world/Map.html" title="class in logic.world"><code>Map</code></a> object.
+
+ <p>File format: first line is the level name; the next 20 lines are
+ comma-separated rows of 20 tile-type integers.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -118,7 +122,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../logic/world/Map.html" title="class in logic.world">Map</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readFile(java.lang.String)" class="member-name-link">readFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fileName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Reads and parses the map file at the given classpath location.</div>
+</div>
 </div>
 </div>
 </div>
@@ -157,6 +163,14 @@ loadScripts(document, 'script');</script>
 <h3>readFile</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../logic/world/Map.html" title="class in logic.world">Map</a></span>&nbsp;<span class="element-name">readFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fileName)</span></div>
+<div class="block">Reads and parses the map file at the given classpath location.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fileName</code> - classpath-relative path (e.g. <code>"maps/1.txt"</code>)</dd>
+<dt>Returns:</dt>
+<dd>a populated <a href="../../logic/world/Map.html" title="class in logic.world"><code>Map</code></a>, or <code>null</code> if the file is missing
+         or malformed</dd>
+</dl>
 </div>
 </section>
 </li>

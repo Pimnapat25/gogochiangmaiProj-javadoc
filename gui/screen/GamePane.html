@@ -107,6 +107,17 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GamePane</span>
 <span class="extends-implements">extends javafx.scene.layout.BorderPane</span></div>
+<div class="block">The primary gameplay screen that renders the tile grid and drives the game loop.
+
+ <p>Singleton — obtain via <a href="#getInstance()"><code>getInstance()</code></a>. Two background threads run
+ continuously while the game is active:</p>
+ <ul>
+   <li><b>mainLoop</b> — ticks every 70 ms: moves the student and all teachers,
+       advances spell shots, checks win/loss conditions.</li>
+   <li><b>spawnLoop</b> — periodically calls
+       <a href="../../logic/world/GameSystem.html#spawnTeacher()"><code>GameSystem.spawnTeacher()</code></a> and
+       <a href="../../logic/world/GameSystem.html#spawnBullet()"><code>GameSystem.spawnBullet()</code></a>.</li>
+ </ul></div>
 </div>
 </section>
 <section class="summary">
@@ -156,34 +167,56 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEntity(javafx.scene.Node,int,int)" class="member-name-link">addEntity</a><wbr>(javafx.scene.Node&nbsp;view,
  int&nbsp;x,
  int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds an entity sprite to the game board at the given tile coordinates.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GamePane.html" title="class in gui.screen">GamePane</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns the singleton <code>GamePane</code>, creating it on first call.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPaused()" class="member-name-link">isPaused</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the game loop is currently paused.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshView()" class="member-name-link">refreshView</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Rebuilds the 20×20 tile grid and re-adds all entity sprites for the
+ currently loaded level.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEntity(javafx.scene.Node)" class="member-name-link">removeEntity</a><wbr>(javafx.scene.Node&nbsp;view)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes an entity sprite from the game board.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPaused(boolean)" class="member-name-link">setPaused</a><wbr>(boolean&nbsp;paused)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the paused state of the game loop.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showQuestionPopup(logic.entity.QuestionMark)" class="member-name-link">showQuestionPopup</a><wbr>(<a href="../../logic/entity/QuestionMark.html" title="class in logic.entity">QuestionMark</a>&nbsp;question)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Pauses the game and displays the retro question popup for the given terminal.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateBullets(int)" class="member-name-link">updateBullets</a><wbr>(int&nbsp;amountBullets)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the HUD bullet counter label.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateHp(int)" class="member-name-link">updateHp</a><wbr>(int&nbsp;hp)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the HUD HP display using heart characters (❤ for remaining HP,
+ ♡ for lost HP).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePower(int)" class="member-name-link">updatePower</a><wbr>(int&nbsp;power)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the HUD power label.</div>
+</div>
 </div>
 </div>
 </div>
@@ -224,6 +257,11 @@ loadScripts(document, 'script');</script>
 <h3>getInstance</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="GamePane.html" title="class in gui.screen">GamePane</a></span>&nbsp;<span class="element-name">getInstance</span>()</div>
+<div class="block">Returns the singleton <code>GamePane</code>, creating it on first call.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the shared <code>GamePane</code> instance</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -232,6 +270,9 @@ loadScripts(document, 'script');</script>
 <h3>refreshView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshView</span>()</div>
+<div class="block">Rebuilds the 20×20 tile grid and re-adds all entity sprites for the
+ currently loaded level. Also resets the HUD counters and shows the
+ level-intro overlay.</div>
 </div>
 </section>
 </li>
@@ -242,6 +283,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEntity</span><wbr><span class="parameters">(javafx.scene.Node&nbsp;view,
  int&nbsp;x,
  int&nbsp;y)</span></div>
+<div class="block">Adds an entity sprite to the game board at the given tile coordinates.
+ Does nothing if the node is already a child of the board.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>view</code> - the JavaFX node to add</dd>
+<dd><code>x</code> - tile column (0-based)</dd>
+<dd><code>y</code> - tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -250,6 +299,11 @@ loadScripts(document, 'script');</script>
 <h3>removeEntity</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEntity</span><wbr><span class="parameters">(javafx.scene.Node&nbsp;view)</span></div>
+<div class="block">Removes an entity sprite from the game board.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>view</code> - the JavaFX node to remove</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -258,6 +312,11 @@ loadScripts(document, 'script');</script>
 <h3>updateBullets</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateBullets</span><wbr><span class="parameters">(int&nbsp;amountBullets)</span></div>
+<div class="block">Updates the HUD bullet counter label.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>amountBullets</code> - current number of spell shots remaining</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -266,6 +325,11 @@ loadScripts(document, 'script');</script>
 <h3>updatePower</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePower</span><wbr><span class="parameters">(int&nbsp;power)</span></div>
+<div class="block">Updates the HUD power label.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>power</code> - current spell damage multiplier</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -274,6 +338,12 @@ loadScripts(document, 'script');</script>
 <h3>updateHp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateHp</span><wbr><span class="parameters">(int&nbsp;hp)</span></div>
+<div class="block">Updates the HUD HP display using heart characters (❤ for remaining HP,
+ ♡ for lost HP).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>hp</code> - current hit points</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -282,6 +352,12 @@ loadScripts(document, 'script');</script>
 <h3>showQuestionPopup</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">showQuestionPopup</span><wbr><span class="parameters">(<a href="../../logic/entity/QuestionMark.html" title="class in logic.entity">QuestionMark</a>&nbsp;question)</span></div>
+<div class="block">Pauses the game and displays the retro question popup for the given terminal.
+ Grants power on correct answer; resumes the game when the popup is dismissed.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>question</code> - the <a href="../../logic/entity/QuestionMark.html" title="class in logic.entity"><code>QuestionMark</code></a> the student is standing on</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -290,6 +366,11 @@ loadScripts(document, 'script');</script>
 <h3>isPaused</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPaused</span>()</div>
+<div class="block">Returns whether the game loop is currently paused.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> while a popup or pause menu is visible</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -298,6 +379,11 @@ loadScripts(document, 'script');</script>
 <h3>setPaused</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPaused</span><wbr><span class="parameters">(boolean&nbsp;paused)</span></div>
+<div class="block">Sets the paused state of the game loop.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>paused</code> - <code>true</code> to pause, <code>false</code> to resume</dd>
+</dl>
 </div>
 </section>
 </li>

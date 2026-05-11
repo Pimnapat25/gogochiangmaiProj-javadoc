@@ -82,6 +82,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Moveable</span></div>
+<div class="block">Marks a game entity that can move on the tile grid each tick.
+
+ <p>Implemented by <a href="../entity/BaseTeacher.html" title="class in logic.entity"><code>BaseTeacher</code></a> and its subclasses.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -99,7 +102,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#move()" class="member-name-link">move</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Executes one movement step on the tile grid.</div>
+</div>
 </div>
 </div>
 </div>
@@ -119,6 +124,8 @@ loadScripts(document, 'script');</script>
 <h3>move</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">move</span>()</div>
+<div class="block">Executes one movement step on the tile grid.
+ Implementations must respect wall tiles and map boundaries.</div>
 </div>
 </section>
 </li>

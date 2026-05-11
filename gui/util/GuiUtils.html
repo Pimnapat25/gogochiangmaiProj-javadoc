@@ -108,6 +108,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GuiUtils</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Shared UI utilities: pre-loaded sound effects, the custom pixel font, and
+ factory methods for styled buttons and background images.
+
+ <p>All <code>AudioClip</code> fields are initialised eagerly at
+ class load time so the first call to any sound never blocks the JavaFX thread.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -193,12 +198,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#applyBackgroundImage(javafx.scene.layout.Pane,java.lang.String)" class="member-name-link">applyBackgroundImage</a><wbr>(javafx.scene.layout.Pane&nbsp;pane,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;img)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Sets a full-cover background image on the given pane, stretching to fill
+ without repeating.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static javafx.scene.control.Button</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createButton(java.lang.String,java.lang.Runnable)" class="member-name-link">createButton</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Standard back-to-menu button used on every non-home screen.</div>
+<div class="block">Creates a styled game button with hover animation and click sound.</div>
 </div>
 </div>
 </div>
@@ -359,7 +367,14 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">javafx.scene.control.Button</span>&nbsp;<span class="element-name">createButton</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
-<div class="block">Standard back-to-menu button used on every non-home screen.</div>
+<div class="block">Creates a styled game button with hover animation and click sound.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - text displayed on the button</dd>
+<dd><code>action</code> - callback executed when the button is clicked</dd>
+<dt>Returns:</dt>
+<dd>a fully styled <code>Button</code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -369,6 +384,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyBackgroundImage</span><wbr><span class="parameters">(javafx.scene.layout.Pane&nbsp;pane,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;img)</span></div>
+<div class="block">Sets a full-cover background image on the given pane, stretching to fill
+ without repeating.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pane</code> - the pane to decorate</dd>
+<dd><code>img</code> - classpath-relative path to the background image</dd>
+</dl>
 </div>
 </section>
 </li>

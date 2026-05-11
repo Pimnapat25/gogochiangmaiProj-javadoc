@@ -106,6 +106,11 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">BaseCharacterProfile</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></span></div>
+<div class="block">Shared implementation of <a href="CharacterProfile.html" title="interface in logic.character"><code>CharacterProfile</code></a> that derives all resource
+ paths from the character's gender and element.
+
+ <p>Concrete subclasses only need to call the protected constructor with their
+ specific stats; all getter implementations are inherited from here.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -126,7 +131,10 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;element,
  int&nbsp;maxHp,
  int&nbsp;focusGainPerCorrectAnswer)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initialises all fields, auto-deriving image paths from <code>gender</code> and
+ <code>element</code>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -143,40 +151,55 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayName()" class="member-name-link">displayName</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Display name shown in the character selection screen.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#element()" class="member-name-link">element</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Element key that determines spell damage, slow, and visual effect
+ (<code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, or <code>"purple"</code>).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#focusGainPerCorrectAnswer()" class="member-name-link">focusGainPerCorrectAnswer</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Amount of focus gained each time the player answers a question correctly.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gender()" class="member-name-link">gender</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gender key used for resource path construction (<code>"boy"</code> or <code>"girl"</code>).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Unique identifier for this character (e.g.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxHp()" class="member-name-link">maxHp</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Maximum hit points for this character.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#npcResource()" class="member-name-link">npcResource</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Top-down NPC sprite — shown in the tile map gameplay.</div>
+<div class="block">Top-down NPC sprite path — used for the student tile on the game board.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#portraitResource()" class="member-name-link">portraitResource</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Walk sprite sheet — shown in character select and battle.</div>
+<div class="block">Walk sprite sheet path — shown in character select and battle screens.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spellResource()" class="member-name-link">spellResource</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Spell-cast sprite sheet — shown in character select element cards.</div>
+<div class="block">Spell-cast sprite sheet path — shown in character select element cards.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#walkResource()" class="member-name-link">walkResource</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Walk animation sprite sheet path.</div>
+</div>
 </div>
 </div>
 </div>
@@ -204,6 +227,17 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;element,
  int&nbsp;maxHp,
  int&nbsp;focusGainPerCorrectAnswer)</span></div>
+<div class="block">Initialises all fields, auto-deriving image paths from <code>gender</code> and
+ <code>element</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id</code> - unique character identifier (e.g. <code>"boy-blue"</code>)</dd>
+<dd><code>displayName</code> - name shown in the character selection UI</dd>
+<dd><code>gender</code> - <code>"boy"</code> or <code>"girl"</code></dd>
+<dd><code>element</code> - <code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, or <code>"purple"</code></dd>
+<dd><code>maxHp</code> - maximum hit points</dd>
+<dd><code>focusGainPerCorrectAnswer</code> - focus gained per correct quiz answer</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -220,9 +254,13 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>id</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#id()">CharacterProfile</a></code></span></div>
+<div class="block">Unique identifier for this character (e.g. <code>"boy-blue"</code>).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#id()">id</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>character ID string</dd>
 </dl>
 </div>
 </section>
@@ -232,9 +270,13 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>displayName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">displayName</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#displayName()">CharacterProfile</a></code></span></div>
+<div class="block">Display name shown in the character selection screen.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#displayName()">displayName</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>localised display name</dd>
 </dl>
 </div>
 </section>
@@ -245,10 +287,12 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">portraitResource</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#portraitResource()">CharacterProfile</a></code></span></div>
-<div class="block">Walk sprite sheet — shown in character select and battle.</div>
+<div class="block">Walk sprite sheet path — shown in character select and battle screens.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#portraitResource()">portraitResource</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
 </dl>
 </div>
 </section>
@@ -259,10 +303,12 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">spellResource</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#spellResource()">CharacterProfile</a></code></span></div>
-<div class="block">Spell-cast sprite sheet — shown in character select element cards.</div>
+<div class="block">Spell-cast sprite sheet path — shown in character select element cards.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#spellResource()">spellResource</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
 </dl>
 </div>
 </section>
@@ -272,9 +318,13 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>walkResource</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">walkResource</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#walkResource()">CharacterProfile</a></code></span></div>
+<div class="block">Walk animation sprite sheet path.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#walkResource()">walkResource</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
 </dl>
 </div>
 </section>
@@ -285,10 +335,12 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">npcResource</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#npcResource()">CharacterProfile</a></code></span></div>
-<div class="block">Top-down NPC sprite — shown in the tile map gameplay.</div>
+<div class="block">Top-down NPC sprite path — used for the student tile on the game board.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#npcResource()">npcResource</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>classpath-relative image path</dd>
 </dl>
 </div>
 </section>
@@ -298,9 +350,13 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>gender</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">gender</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#gender()">CharacterProfile</a></code></span></div>
+<div class="block">Gender key used for resource path construction (<code>"boy"</code> or <code>"girl"</code>).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#gender()">gender</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>gender string</dd>
 </dl>
 </div>
 </section>
@@ -310,9 +366,14 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>element</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">element</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#element()">CharacterProfile</a></code></span></div>
+<div class="block">Element key that determines spell damage, slow, and visual effect
+ (<code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, or <code>"purple"</code>).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#element()">element</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>element string</dd>
 </dl>
 </div>
 </section>
@@ -322,9 +383,13 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>maxHp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxHp</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#maxHp()">CharacterProfile</a></code></span></div>
+<div class="block">Maximum hit points for this character.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#maxHp()">maxHp</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>max HP</dd>
 </dl>
 </div>
 </section>
@@ -334,9 +399,13 @@ implements <a href="CharacterProfile.html" title="interface in logic.character">
 <h3>focusGainPerCorrectAnswer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">focusGainPerCorrectAnswer</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="CharacterProfile.html#focusGainPerCorrectAnswer()">CharacterProfile</a></code></span></div>
+<div class="block">Amount of focus gained each time the player answers a question correctly.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="CharacterProfile.html#focusGainPerCorrectAnswer()">focusGainPerCorrectAnswer</a></code>&nbsp;in interface&nbsp;<code><a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></code></dd>
+<dt>Returns:</dt>
+<dd>focus gain per correct answer</dd>
 </dl>
 </div>
 </section>

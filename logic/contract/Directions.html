@@ -101,6 +101,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public enum </span><span class="element-name type-name-label">Directions</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="Directions.html" title="enum class in logic.contract">Directions</a>&gt;</span></div>
+<div class="block">Cardinal directions used for player input, projectile travel, and AI pathfinding.
+
+ <ul>
+   <li><code>UP / DOWN / LEFT / RIGHT</code> — active movement directions.</li>
+   <li><code>STAY</code> — player holds position intentionally (key held while stopped).</li>
+   <li><code>NONE</code> — no direction set; used to stop movement after each tick.</li>
+ </ul></div>
 </div>
 </section>
 <section class="summary">
@@ -123,17 +130,29 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Enum Constant</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="#DOWN" class="member-name-link">DOWN</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Move one tile downward (increasing Y).</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="#LEFT" class="member-name-link">LEFT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Move one tile to the left (decreasing X).</div>
+</div>
 <div class="col-first even-row-color"><code><a href="#NONE" class="member-name-link">NONE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">No direction queued; entity skips movement for this tick.</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="#RIGHT" class="member-name-link">RIGHT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Move one tile to the right (increasing X).</div>
+</div>
 <div class="col-first even-row-color"><code><a href="#STAY" class="member-name-link">STAY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Player is holding position; entity does not move but remains interactive.</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="#UP" class="member-name-link">UP</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Move one tile upward (decreasing Y).</div>
+</div>
 </div>
 </section>
 </li>
@@ -184,6 +203,7 @@ the order they are declared.</div>
 <h3>UP</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Directions.html" title="enum class in logic.contract">Directions</a></span>&nbsp;<span class="element-name">UP</span></div>
+<div class="block">Move one tile upward (decreasing Y).</div>
 </div>
 </section>
 </li>
@@ -192,6 +212,7 @@ the order they are declared.</div>
 <h3>DOWN</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Directions.html" title="enum class in logic.contract">Directions</a></span>&nbsp;<span class="element-name">DOWN</span></div>
+<div class="block">Move one tile downward (increasing Y).</div>
 </div>
 </section>
 </li>
@@ -200,6 +221,7 @@ the order they are declared.</div>
 <h3>LEFT</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Directions.html" title="enum class in logic.contract">Directions</a></span>&nbsp;<span class="element-name">LEFT</span></div>
+<div class="block">Move one tile to the left (decreasing X).</div>
 </div>
 </section>
 </li>
@@ -208,6 +230,7 @@ the order they are declared.</div>
 <h3>RIGHT</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Directions.html" title="enum class in logic.contract">Directions</a></span>&nbsp;<span class="element-name">RIGHT</span></div>
+<div class="block">Move one tile to the right (increasing X).</div>
 </div>
 </section>
 </li>
@@ -216,6 +239,7 @@ the order they are declared.</div>
 <h3>STAY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Directions.html" title="enum class in logic.contract">Directions</a></span>&nbsp;<span class="element-name">STAY</span></div>
+<div class="block">Player is holding position; entity does not move but remains interactive.</div>
 </div>
 </section>
 </li>
@@ -224,6 +248,7 @@ the order they are declared.</div>
 <h3>NONE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Directions.html" title="enum class in logic.contract">Directions</a></span>&nbsp;<span class="element-name">NONE</span></div>
+<div class="block">No direction queued; entity skips movement for this tick.</div>
 </div>
 </section>
 </li>

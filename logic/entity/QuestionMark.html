@@ -99,6 +99,12 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">QuestionMark</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../contract/Interactable.html" title="interface in logic.contract">Interactable</a></span></div>
+<div class="block">An interactive computer terminal placed on quest tiles that presents a
+ Java OOP question to the player.
+
+ <p>Rendered with a pulsing scale animation. When the student steps on the
+ same tile and presses the interact key, <a href="../../gui/screen/GamePane.html" title="class in gui.screen"><code>GamePane</code></a> opens
+ the question popup.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -115,7 +121,9 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
  int&nbsp;y,
  <a href="../world/Question.html" title="class in logic.world">Question</a>&nbsp;questionData,
  int&nbsp;level)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a QuestionMark at the given tile position with the provided question data.</div>
+</div>
 </div>
 </section>
 </li>
@@ -144,7 +152,9 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onInteract()" class="member-name-link">onInteract</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Plays the pop sound when the player interacts with this terminal.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setX(int)" class="member-name-link">setX</a><wbr>(int&nbsp;x)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -176,6 +186,14 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
  int&nbsp;y,
  <a href="../world/Question.html" title="class in logic.world">Question</a>&nbsp;questionData,
  int&nbsp;level)</span></div>
+<div class="block">Creates a QuestionMark at the given tile position with the provided question data.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - tile column (0-based)</dd>
+<dd><code>y</code> - tile row (0-based)</dd>
+<dd><code>questionData</code> - the quiz question associated with this terminal</dd>
+<dd><code>level</code> - current level number, used to select the correct terminal sprite</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -192,6 +210,7 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>onInteract</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onInteract</span>()</div>
+<div class="block">Plays the pop sound when the player interacts with this terminal.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../contract/Interactable.html#onInteract()">onInteract</a></code>&nbsp;in interface&nbsp;<code><a href="../contract/Interactable.html" title="interface in logic.contract">Interactable</a></code></dd>
@@ -204,6 +223,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getQuestionData</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../world/Question.html" title="class in logic.world">Question</a></span>&nbsp;<span class="element-name">getQuestionData</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the quiz question held by this terminal</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -212,6 +235,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getImageView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">javafx.scene.image.ImageView</span>&nbsp;<span class="element-name">getImageView</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the JavaFX <code>ImageView</code> for this terminal</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -220,6 +247,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getX</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile column (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -228,6 +259,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getY</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -236,6 +271,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>setX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setX</span><wbr><span class="parameters">(int&nbsp;x)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - tile column (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -244,6 +283,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>setY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setY</span><wbr><span class="parameters">(int&nbsp;y)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>y</code> - tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>

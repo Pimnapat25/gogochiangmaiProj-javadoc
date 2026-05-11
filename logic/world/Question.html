@@ -90,6 +90,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Question</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Immutable record for a single multiple-choice quiz question.
+
+ <p>Parsed from the level's <code>questions/N.txt</code> file by
+ <a href="../../io/parser/QuestionParser.html" title="class in io.parser"><code>QuestionParser</code></a> and stored in a <a href="../entity/QuestionMark.html" title="class in logic.entity"><code>QuestionMark</code></a>.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -105,7 +109,9 @@ loadScripts(document, 'script');</script>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.util.List,int)" class="member-name-link">Question</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prompt,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;options,
  int&nbsp;correctOptionIndex)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs an immutable question record.</div>
+</div>
 </div>
 </section>
 </li>
@@ -153,6 +159,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Question</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prompt,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;options,
  int&nbsp;correctOptionIndex)</span></div>
+<div class="block">Constructs an immutable question record.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>prompt</code> - the question text displayed to the player</dd>
+<dd><code>options</code> - list of answer choices (5 expected by the parser)</dd>
+<dd><code>correctOptionIndex</code> - zero-based index of the correct answer in <code>options</code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -169,6 +182,10 @@ loadScripts(document, 'script');</script>
 <h3>getPrompt</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getPrompt</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the question text to display</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -177,6 +194,10 @@ loadScripts(document, 'script');</script>
 <h3>getOptions</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getOptions</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the list of answer choices</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -185,6 +206,10 @@ loadScripts(document, 'script');</script>
 <h3>getCorrectOptionIndex</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCorrectOptionIndex</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>zero-based index of the correct answer</dd>
+</dl>
 </div>
 </section>
 </li>

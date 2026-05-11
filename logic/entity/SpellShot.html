@@ -98,6 +98,16 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SpellShot</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../contract/Interactable.html" title="interface in logic.contract">Interactable</a></span></div>
+<div class="block">A projectile fired by the student that travels one tile per game tick until
+ it hits a wall or a teacher.
+
+ <p>Behaviour is driven by the chosen <code>element</code>:</p>
+ <ul>
+   <li><b>red</b>  — fire: 3 damage, no slow</li>
+   <li><b>blue</b> — ice: 0 damage, 20-tick freeze</li>
+   <li><b>green</b>— earth: 1 damage, 10-tick slow</li>
+   <li><b>purple</b>— dark: 1 damage, 10-tick slow</li>
+ </ul></div>
 </div>
 </section>
 <section class="summary">
@@ -114,7 +124,9 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
  int&nbsp;y,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;element)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates and positions a spell projectile, loading the element's GIF effect.</div>
+</div>
 </div>
 </section>
 </li>
@@ -140,13 +152,19 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether this spell is still travelling.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onInteract()" class="member-name-link">onInteract</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Plays the shoot sound when the student fires this spell.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Advances the spell one tile in its travel direction.</div>
+</div>
 </div>
 </div>
 </div>
@@ -172,6 +190,16 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
  int&nbsp;y,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
  <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;element)</span></div>
+<div class="block">Creates and positions a spell projectile, loading the element's GIF effect.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - origin tile column</dd>
+<dd><code>y</code> - origin tile row</dd>
+<dd><code>direction</code> - travel direction as a string: <code>"UP"</code>, <code>"DOWN"</code>,
+                  <code>"LEFT"</code>, or <code>"RIGHT"</code></dd>
+<dd><code>element</code> - element key: <code>"red"</code>, <code>"blue"</code>, <code>"green"</code>,
+                  or <code>"purple"</code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -188,6 +216,9 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>update</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+<div class="block">Advances the spell one tile in its travel direction.
+ Destroys the spell on wall collision or map boundary; applies damage and
+ slow to the first teacher it hits.</div>
 </div>
 </section>
 </li>
@@ -196,6 +227,7 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>onInteract</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onInteract</span>()</div>
+<div class="block">Plays the shoot sound when the student fires this spell.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../contract/Interactable.html#onInteract()">onInteract</a></code>&nbsp;in interface&nbsp;<code><a href="../contract/Interactable.html" title="interface in logic.contract">Interactable</a></code></dd>
@@ -208,6 +240,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getImageView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">javafx.scene.image.ImageView</span>&nbsp;<span class="element-name">getImageView</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the JavaFX <code>ImageView</code> for this projectile</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -216,6 +252,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getX</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>current tile column (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -224,6 +264,10 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getY</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>current tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -232,6 +276,11 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>isActive</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isActive</span>()</div>
+<div class="block">Returns whether this spell is still travelling.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> until the spell hits a wall, boundary, or teacher</dd>
+</dl>
 </div>
 </section>
 </li>

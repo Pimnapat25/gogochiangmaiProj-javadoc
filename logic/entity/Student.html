@@ -107,6 +107,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Student</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The player-controlled character that navigates the tile map.
+
+ <p>Each game tick <a href="#update()"><code>update()</code></a> is called by the main loop. The student
+ moves one tile in <code>currentDirection</code> (set by key-press events) then
+ resets the direction to <a href="../contract/Directions.html#NONE"><code>Directions.NONE</code></a>, implementing
+ hold-key movement. A brief invincibility window after taking damage prevents
+ rapid consecutive hits.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -122,7 +129,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#MAX_HP" class="member-name-link">MAX_HP</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Maximum hit points for the student.</div>
+</div>
 </div>
 </section>
 </li>
@@ -136,7 +145,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int)" class="member-name-link">Student</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a student at the given tile coordinates and loads the character sprite.</div>
+</div>
 </div>
 </section>
 </li>
@@ -153,48 +164,77 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addPower()" class="member-name-link">addPower</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Increments the spell damage multiplier by one.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#answerQuestion()" class="member-name-link">answerQuestion</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Opens the question popup if the student is standing on a
+ <a href="QuestionMark.html" title="class in logic.entity"><code>QuestionMark</code></a> tile.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBulletsCount()" class="member-name-link">getBulletsCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the number of spell shots remaining.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHp()" class="member-name-link">getHp</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the current hit points.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>javafx.scene.image.ImageView</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageView()" class="member-name-link">getImageView</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the JavaFX node used to render the student on the game board.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPower()" class="member-name-link">getPower</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the spell damage multiplier (increases as the student answers questions correctly).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getX()" class="member-name-link">getX</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the student's current column position on the tile grid.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY()" class="member-name-link">getY</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the student's current row position on the tile grid.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDead()" class="member-name-link">isDead</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns <code>true</code> when the student's HP has reached zero.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDirection(logic.contract.Directions)" class="member-name-link">setDirection</a><wbr>(<a href="../contract/Directions.html" title="enum class in logic.contract">Directions</a>&nbsp;dir)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the movement direction for the next tick.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImage(java.lang.String)" class="member-name-link">setImage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;img)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Replaces the student's on-screen sprite with the image at the given path.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shoot()" class="member-name-link">shoot</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Fires a spell in <code>lastDirection</code> using the selected character's element.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#takeDamage()" class="member-name-link">takeDamage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if damage was applied (not invincible).</div>
+<div class="block">Applies one point of damage and starts the invincibility window.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Advances the student by one game tick: decrements invincibility, moves one
+ tile in the current direction (if walkable), then resets direction to
+ <a href="../contract/Directions.html#NONE"><code>Directions.NONE</code></a>.</div>
+</div>
 </div>
 </div>
 </div>
@@ -217,6 +257,7 @@ loadScripts(document, 'script');</script>
 <h3>MAX_HP</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_HP</span></div>
+<div class="block">Maximum hit points for the student.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -242,6 +283,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Student</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y)</span></div>
+<div class="block">Creates a student at the given tile coordinates and loads the character sprite.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - initial column (0-based)</dd>
+<dd><code>y</code> - initial row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -258,6 +305,9 @@ loadScripts(document, 'script');</script>
 <h3>update</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+<div class="block">Advances the student by one game tick: decrements invincibility, moves one
+ tile in the current direction (if walkable), then resets direction to
+ <a href="../contract/Directions.html#NONE"><code>Directions.NONE</code></a>.</div>
 </div>
 </section>
 </li>
@@ -266,6 +316,14 @@ loadScripts(document, 'script');</script>
 <h3>setDirection</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDirection</span><wbr><span class="parameters">(<a href="../contract/Directions.html" title="enum class in logic.contract">Directions</a>&nbsp;dir)</span></div>
+<div class="block">Sets the movement direction for the next tick.
+ Also records the direction as <code>lastDirection</code> so spells fire the
+ correct way even when the student is stationary.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dir</code> - the desired direction; <a href="../contract/Directions.html#NONE"><code>Directions.NONE</code></a> or
+            <a href="../contract/Directions.html#STAY"><code>Directions.STAY</code></a> skips recording</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -274,6 +332,8 @@ loadScripts(document, 'script');</script>
 <h3>shoot</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">shoot</span>()</div>
+<div class="block">Fires a spell in <code>lastDirection</code> using the selected character's element.
+ Consumes one bullet; does nothing if the student has no bullets remaining.</div>
 </div>
 </section>
 </li>
@@ -282,6 +342,8 @@ loadScripts(document, 'script');</script>
 <h3>answerQuestion</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">answerQuestion</span>()</div>
+<div class="block">Opens the question popup if the student is standing on a
+ <a href="QuestionMark.html" title="class in logic.entity"><code>QuestionMark</code></a> tile.  Does nothing if no matching tile is found.</div>
 </div>
 </section>
 </li>
@@ -290,7 +352,12 @@ loadScripts(document, 'script');</script>
 <h3>takeDamage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">takeDamage</span>()</div>
-<div class="block">Returns true if damage was applied (not invincible).</div>
+<div class="block">Applies one point of damage and starts the invincibility window.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if damage was applied; <code>false</code> if the student
+         is currently invincible and the hit was ignored</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -299,6 +366,11 @@ loadScripts(document, 'script');</script>
 <h3>isDead</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDead</span>()</div>
+<div class="block">Returns <code>true</code> when the student's HP has reached zero.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if the student is dead</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -307,6 +379,11 @@ loadScripts(document, 'script');</script>
 <h3>getHp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getHp</span>()</div>
+<div class="block">Returns the current hit points.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>current HP (never below 0)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -315,6 +392,11 @@ loadScripts(document, 'script');</script>
 <h3>getX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getX</span>()</div>
+<div class="block">Returns the student's current column position on the tile grid.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile column (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -323,6 +405,11 @@ loadScripts(document, 'script');</script>
 <h3>getY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getY</span>()</div>
+<div class="block">Returns the student's current row position on the tile grid.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -331,6 +418,11 @@ loadScripts(document, 'script');</script>
 <h3>getPower</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPower</span>()</div>
+<div class="block">Returns the spell damage multiplier (increases as the student answers questions correctly).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>current power level (minimum 1)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -339,6 +431,7 @@ loadScripts(document, 'script');</script>
 <h3>addPower</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPower</span>()</div>
+<div class="block">Increments the spell damage multiplier by one.</div>
 </div>
 </section>
 </li>
@@ -347,6 +440,11 @@ loadScripts(document, 'script');</script>
 <h3>getBulletsCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getBulletsCount</span>()</div>
+<div class="block">Returns the number of spell shots remaining.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>bullet count</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -355,6 +453,12 @@ loadScripts(document, 'script');</script>
 <h3>setImage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;img)</span></div>
+<div class="block">Replaces the student's on-screen sprite with the image at the given path.
+ Creates the <code>ImageView</code> on first call.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>img</code> - classpath-relative path to the image file</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -363,6 +467,11 @@ loadScripts(document, 'script');</script>
 <h3>getImageView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">javafx.scene.image.ImageView</span>&nbsp;<span class="element-name">getImageView</span>()</div>
+<div class="block">Returns the JavaFX node used to render the student on the game board.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the student's <code>ImageView</code></dd>
+</dl>
 </div>
 </section>
 </li>

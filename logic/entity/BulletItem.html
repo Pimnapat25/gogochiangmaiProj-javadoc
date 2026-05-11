@@ -96,6 +96,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BulletItem</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../contract/Interactable.html" title="interface in logic.contract">Interactable</a></span></div>
+<div class="block">A collectible ammo item that spawns on item tiles and grants one spell shot.
+
+ <p>Displayed with a looping Y-axis spin animation. When the student walks
+ onto the same tile the item is removed and the bullet count is incremented.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -109,7 +113,9 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">BulletItem</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a BulletItem at a random item-spawn tile and starts its rotation animation.</div>
+</div>
 </div>
 </section>
 </li>
@@ -126,16 +132,24 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>javafx.scene.image.ImageView</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageView()" class="member-name-link">getImageView</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the JavaFX node used to render this item on the game board.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getX()" class="member-name-link">getX</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the item's column position on the tile grid.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY()" class="member-name-link">getY</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the item's row position on the tile grid.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onInteract()" class="member-name-link">onInteract</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Plays the collection sound when the student picks up this item.</div>
+</div>
 </div>
 </div>
 </div>
@@ -158,6 +172,7 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>BulletItem</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BulletItem</span>()</div>
+<div class="block">Creates a BulletItem at a random item-spawn tile and starts its rotation animation.</div>
 </div>
 </section>
 </li>
@@ -174,6 +189,7 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>onInteract</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onInteract</span>()</div>
+<div class="block">Plays the collection sound when the student picks up this item.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../contract/Interactable.html#onInteract()">onInteract</a></code>&nbsp;in interface&nbsp;<code><a href="../contract/Interactable.html" title="interface in logic.contract">Interactable</a></code></dd>
@@ -186,6 +202,11 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getImageView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">javafx.scene.image.ImageView</span>&nbsp;<span class="element-name">getImageView</span>()</div>
+<div class="block">Returns the JavaFX node used to render this item on the game board.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the item's <code>ImageView</code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -194,6 +215,11 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getY</span>()</div>
+<div class="block">Returns the item's row position on the tile grid.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -202,6 +228,11 @@ implements <a href="../contract/Interactable.html" title="interface in logic.con
 <h3>getX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getX</span>()</div>
+<div class="block">Returns the item's column position on the tile grid.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile column (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>

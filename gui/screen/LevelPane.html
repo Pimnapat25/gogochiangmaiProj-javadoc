@@ -98,6 +98,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LevelPane</span>
 <span class="extends-implements">extends javafx.scene.layout.StackPane</span></div>
+<div class="block">Level-selection screen showing available map levels.
+
+ <p>Singleton — obtain via <a href="#getInstance()"><code>getInstance()</code></a>. Navigates to
+ <a href="../battle/CharacterSelectPane.html" title="class in gui.battle"><code>CharacterSelectPane</code></a> when a level is chosen.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -145,7 +149,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LevelPane.html" title="class in gui.screen">LevelPane</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns the singleton <code>LevelPane</code>, creating it on first call.</div>
+</div>
 </div>
 </div>
 </div>
@@ -186,6 +192,11 @@ loadScripts(document, 'script');</script>
 <h3>getInstance</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="LevelPane.html" title="class in gui.screen">LevelPane</a></span>&nbsp;<span class="element-name">getInstance</span>()</div>
+<div class="block">Returns the singleton <code>LevelPane</code>, creating it on first call.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the shared <code>LevelPane</code> instance</dd>
+</dl>
 </div>
 </section>
 </li>

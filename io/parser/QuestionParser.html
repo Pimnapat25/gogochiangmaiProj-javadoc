@@ -88,6 +88,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">QuestionParser</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Parses a plain-text question file from the classpath into a list of
+ <a href="../../logic/world/Question.html" title="class in logic.world"><code>Question</code></a> objects.
+
+ <p>File format per question block: one prompt line, five answer lines prefixed
+ with <code>"A)"</code> through <code>"E)"</code>, then an <code>"Answer: N"</code> line
+ (1-based). Blocks are separated by blank lines.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -118,7 +124,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../logic/world/Question.html" title="class in logic.world">Question</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readFile(java.lang.String)" class="member-name-link">readFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fileName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Reads and parses the question file at the given classpath location.</div>
+</div>
 </div>
 </div>
 </div>
@@ -157,6 +165,14 @@ loadScripts(document, 'script');</script>
 <h3>readFile</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../logic/world/Question.html" title="class in logic.world">Question</a>&gt;</span>&nbsp;<span class="element-name">readFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fileName)</span></div>
+<div class="block">Reads and parses the question file at the given classpath location.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fileName</code> - classpath-relative path (e.g. <code>"questions/1.txt"</code>)</dd>
+<dt>Returns:</dt>
+<dd>list of parsed <a href="../../logic/world/Question.html" title="class in logic.world"><code>Question</code></a>s, or <code>null</code> if the file is
+         missing or malformed</dd>
+</dl>
 </div>
 </section>
 </li>

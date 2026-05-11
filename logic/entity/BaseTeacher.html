@@ -92,13 +92,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#getDistanceAfterMove(int,int,int)" tabindex="0">getDistanceAfterMove(int, int, int)</a></li>
 <li><a href="#setX(int)" tabindex="0">setX(int)</a></li>
 <li><a href="#setY(int)" tabindex="0">setY(int)</a></li>
-<li><a href="#getX()" tabindex="0">getX()</a></li>
-<li><a href="#getY()" tabindex="0">getY()</a></li>
 <li><a href="#takeDamage(int)" tabindex="0">takeDamage(int)</a></li>
 <li><a href="#getHp()" tabindex="0">getHp()</a></li>
 <li><a href="#setHp(int)" tabindex="0">setHp(int)</a></li>
 <li><a href="#setWaitTime(int)" tabindex="0">setWaitTime(int)</a></li>
 <li><a href="#setMoveDirection(int)" tabindex="0">setMoveDirection(int)</a></li>
+<li><a href="#getX()" tabindex="0">getX()</a></li>
+<li><a href="#getY()" tabindex="0">getY()</a></li>
 <li><a href="#getImageView()" tabindex="0">getImageView()</a></li>
 </ol>
 </li>
@@ -126,6 +126,13 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BaseTeacher</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../contract/Moveable.html" title="interface in logic.contract">Moveable</a></span></div>
+<div class="block">Base class for all teacher enemy types in the game.
+
+ <p>Implements <a href="../contract/Moveable.html" title="interface in logic.contract"><code>Moveable</code></a> and manages shared behaviour:
+ throttled movement via <code>moveFrequency</code>, optional slow debuff from ice
+ spells, wall-collision checking, and HP management. Subclasses that also
+ implement <a href="../contract/Pursuer.html" title="interface in logic.contract"><code>Pursuer</code></a> will use greedy-chase pathfinding;
+ others choose a random valid direction.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -180,7 +187,9 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int,int)" class="member-name-link">BaseTeacher</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;image,
  int&nbsp;hp,
  int&nbsp;moveFrequency)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initialises a teacher at a random spawner tile with the given stats.</div>
+</div>
 </div>
 </section>
 </li>
@@ -197,7 +206,9 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applySlow(int)" class="member-name-link">applySlow</a><wbr>(int&nbsp;ticks)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds slow ticks, freezing this teacher for the given number of game ticks.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canMoveTo(int,int,logic.world.Map)" class="member-name-link">canMoveTo</a><wbr>(int&nbsp;nextX,
  int&nbsp;nextY,
@@ -207,46 +218,76 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDistanceAfterMove(int,int,int)" class="member-name-link">getDistanceAfterMove</a><wbr>(int&nbsp;direction,
  int&nbsp;targetX,
  int&nbsp;targetY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the squared Euclidean distance to (<code>targetX</code>, <code>targetY</code>)
+ after hypothetically stepping one tile in the given direction.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHp()" class="member-name-link">getHp</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the teacher's current hit points.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>javafx.scene.image.ImageView</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageView()" class="member-name-link">getImageView</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the JavaFX node used to render this teacher on the game board.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValidDirections(logic.world.Map)" class="member-name-link">getValidDirections</a><wbr>(<a href="../world/Map.html" title="class in logic.world">Map</a>&nbsp;map)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the set of directions the teacher may move in without entering a
+ wall, empty tile, or going out of bounds.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getX()" class="member-name-link">getX</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the column position on the tile grid.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY()" class="member-name-link">getY</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the row position on the tile grid.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#move()" class="member-name-link">move</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executes one movement step on the tile grid.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHp(int)" class="member-name-link">setHp</a><wbr>(int&nbsp;hp)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets HP, clamping to a minimum of 0.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMoveDirection(int)" class="member-name-link">setMoveDirection</a><wbr>(int&nbsp;moveDirection)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Overrides the current movement direction code.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWaitTime(int)" class="member-name-link">setWaitTime</a><wbr>(int&nbsp;waitTime)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Resets the internal tick counter used to throttle movement.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setX(int)" class="member-name-link">setX</a><wbr>(int&nbsp;x)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the teacher's column position on the tile grid.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setY(int)" class="member-name-link">setY</a><wbr>(int&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the teacher's row position on the tile grid.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#takeDamage(int)" class="member-name-link">takeDamage</a><wbr>(int&nbsp;damage)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Reduces this teacher's HP by the given amount (minimum 0).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryToMove()" class="member-name-link">tryToMove</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Called every game tick to attempt a movement step.</div>
+</div>
 </div>
 </div>
 </div>
@@ -351,6 +392,13 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BaseTeacher</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;image,
  int&nbsp;hp,
  int&nbsp;moveFrequency)</span></div>
+<div class="block">Initialises a teacher at a random spawner tile with the given stats.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>image</code> - classpath-relative sprite path</dd>
+<dd><code>hp</code> - initial hit points</dd>
+<dd><code>moveFrequency</code> - ticks between each movement step (higher = slower)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -377,6 +425,15 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>getValidDirections</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">getValidDirections</span><wbr><span class="parameters">(<a href="../world/Map.html" title="class in logic.world">Map</a>&nbsp;map)</span></div>
+<div class="block">Returns the set of directions the teacher may move in without entering a
+ wall, empty tile, or going out of bounds.  If no forward directions are
+ available the teacher is allowed to reverse.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>map</code> - the current level map</dd>
+<dt>Returns:</dt>
+<dd>list of valid direction codes (0=Up, 1=Down, 2=Left, 3=Right)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -385,6 +442,13 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>tryToMove</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">tryToMove</span>()</div>
+<div class="block">Called every game tick to attempt a movement step.
+ The teacher is frozen while <code>slowTicks &gt; 0</code>; otherwise it moves
+ once every <code>moveFrequency</code> ticks.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if the teacher actually moved this tick</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -393,6 +457,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>applySlow</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applySlow</span><wbr><span class="parameters">(int&nbsp;ticks)</span></div>
+<div class="block">Adds slow ticks, freezing this teacher for the given number of game ticks.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ticks</code> - number of ticks to add to the freeze counter</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -401,6 +470,9 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>move</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">move</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../contract/Moveable.html#move()">Moveable</a></code></span></div>
+<div class="block">Executes one movement step on the tile grid.
+ Implementations must respect wall tiles and map boundaries.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../contract/Moveable.html#move()">move</a></code>&nbsp;in interface&nbsp;<code><a href="../contract/Moveable.html" title="interface in logic.contract">Moveable</a></code></dd>
@@ -415,6 +487,17 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getDistanceAfterMove</span><wbr><span class="parameters">(int&nbsp;direction,
  int&nbsp;targetX,
  int&nbsp;targetY)</span></div>
+<div class="block">Returns the squared Euclidean distance to (<code>targetX</code>, <code>targetY</code>)
+ after hypothetically stepping one tile in the given direction.
+ Used by <a href="../contract/Pursuer.html" title="interface in logic.contract"><code>Pursuer</code></a> to rank candidate moves.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>direction</code> - direction code (0=Up, 1=Down, 2=Left, 3=Right)</dd>
+<dd><code>targetX</code> - target column</dd>
+<dd><code>targetY</code> - target row</dd>
+<dt>Returns:</dt>
+<dd>squared distance to the target after the step</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -423,6 +506,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>setX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setX</span><wbr><span class="parameters">(int&nbsp;x)</span></div>
+<div class="block">Sets the teacher's column position on the tile grid.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - tile column (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -431,22 +519,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>setY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setY</span><wbr><span class="parameters">(int&nbsp;y)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getX()">
-<h3>getX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getX</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getY()">
-<h3>getY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getY</span>()</div>
+<div class="block">Sets the teacher's row position on the tile grid.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>y</code> - tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -455,6 +532,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>takeDamage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">takeDamage</span><wbr><span class="parameters">(int&nbsp;damage)</span></div>
+<div class="block">Reduces this teacher's HP by the given amount (minimum 0).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>damage</code> - raw damage points to subtract</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -463,6 +545,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>getHp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getHp</span>()</div>
+<div class="block">Returns the teacher's current hit points.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>current HP (never below 0)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -471,6 +558,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>setHp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setHp</span><wbr><span class="parameters">(int&nbsp;hp)</span></div>
+<div class="block">Sets HP, clamping to a minimum of 0.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>hp</code> - new HP value</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -479,6 +571,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>setWaitTime</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setWaitTime</span><wbr><span class="parameters">(int&nbsp;waitTime)</span></div>
+<div class="block">Resets the internal tick counter used to throttle movement.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>waitTime</code> - new counter value</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -487,6 +584,37 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>setMoveDirection</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setMoveDirection</span><wbr><span class="parameters">(int&nbsp;moveDirection)</span></div>
+<div class="block">Overrides the current movement direction code.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>moveDirection</code> - direction code (0=Up, 1=Down, 2=Left, 3=Right, -1=none)</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getX()">
+<h3>getX</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getX</span>()</div>
+<div class="block">Returns the column position on the tile grid.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile column (0-based)</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getY()">
+<h3>getY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getY</span>()</div>
+<div class="block">Returns the row position on the tile grid.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>tile row (0-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -495,6 +623,11 @@ implements <a href="../contract/Moveable.html" title="interface in logic.contrac
 <h3>getImageView</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">javafx.scene.image.ImageView</span>&nbsp;<span class="element-name">getImageView</span>()</div>
+<div class="block">Returns the JavaFX node used to render this teacher on the game board.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the teacher's <code>ImageView</code></dd>
+</dl>
 </div>
 </section>
 </li>

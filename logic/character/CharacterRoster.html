@@ -83,6 +83,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">CharacterRoster</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Static registry of all eight selectable scholar characters.
+
+ <p>Not instantiable; use <a href="#availableCharacters()"><code>availableCharacters()</code></a> or
+ <a href="#forGender(java.lang.String)"><code>forGender(String)</code></a> to obtain profiles.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -100,10 +104,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#availableCharacters()" class="member-name-link">availableCharacters</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns all eight playable character profiles in their default order.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forGender(java.lang.String)" class="member-name-link">forGender</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;gender)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Filters the full roster to characters of the given gender.</div>
+</div>
 </div>
 </div>
 </div>
@@ -126,6 +134,11 @@ loadScripts(document, 'script');</script>
 <h3>availableCharacters</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a>&gt;</span>&nbsp;<span class="element-name">availableCharacters</span>()</div>
+<div class="block">Returns all eight playable character profiles in their default order.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>unmodifiable list of all <a href="CharacterProfile.html" title="interface in logic.character"><code>CharacterProfile</code></a>s</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -134,6 +147,13 @@ loadScripts(document, 'script');</script>
 <h3>forGender</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CharacterProfile.html" title="interface in logic.character">CharacterProfile</a>&gt;</span>&nbsp;<span class="element-name">forGender</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;gender)</span></div>
+<div class="block">Filters the full roster to characters of the given gender.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>gender</code> - <code>"boy"</code> or <code>"girl"</code></dd>
+<dt>Returns:</dt>
+<dd>list of profiles matching the requested gender</dd>
+</dl>
 </div>
 </section>
 </li>

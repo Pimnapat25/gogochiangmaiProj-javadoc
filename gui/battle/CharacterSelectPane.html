@@ -99,6 +99,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CharacterSelectPane</span>
 <span class="extends-implements">extends javafx.scene.layout.BorderPane</span></div>
+<div class="block">Character selection screen shown between level selection and the game start.
+
+ <p>Displays the available scholars filtered by gender tab.  The player picks a
+ character, which is stored in <a href="../../logic/world/GameSystem.html" title="class in logic.world"><code>GameSystem</code></a> before
+ <a href="../screen/GamePane.html" title="class in gui.screen"><code>GamePane</code></a> loads the chosen level.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -142,7 +147,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">CharacterSelectPane</a><wbr>(int&nbsp;level)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs the character selection screen for the given level.</div>
+</div>
 </div>
 </section>
 </li>
@@ -187,6 +194,12 @@ loadScripts(document, 'script');</script>
 <h3>CharacterSelectPane</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CharacterSelectPane</span><wbr><span class="parameters">(int&nbsp;level)</span></div>
+<div class="block">Constructs the character selection screen for the given level.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>level</code> - the level number the player is about to play; passed through
+              to <a href="../../logic/world/GameSystem.html#loadLevel(int)"><code>GameSystem.loadLevel(int)</code></a> when confirmed</dd>
+</dl>
 </div>
 </section>
 </li>

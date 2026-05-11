@@ -97,6 +97,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CellPane</span>
 <span class="extends-implements">extends javafx.scene.layout.Pane</span></div>
+<div class="block">A single 40×40 pixel tile in the 20×20 game board grid.
+
+ <p>Chooses its background image based on the tile-type code passed to the
+ constructor: empty, wall, spawner, or floor (default for all other codes).</p></div>
 </div>
 </section>
 <section class="summary">
@@ -138,7 +142,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int)" class="member-name-link">CellPane</a><wbr>(int&nbsp;status,
  int&nbsp;level)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a tile pane with the correct background for the given tile type.</div>
+</div>
 </div>
 </section>
 </li>
@@ -181,6 +187,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CellPane</span><wbr><span class="parameters">(int&nbsp;status,
  int&nbsp;level)</span></div>
+<div class="block">Creates a tile pane with the correct background for the given tile type.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>status</code> - tile type code (0=empty, 2=wall, 4=spawner, other=floor)</dd>
+<dd><code>level</code> - current level number, used to select level-themed tile sprites</dd>
+</dl>
 </div>
 </section>
 </li>

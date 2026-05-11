@@ -82,6 +82,10 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Interactable</span></div>
+<div class="block">Marks a game object that can be triggered by the player or a spell.
+
+ <p>Implementations include <a href="../entity/BulletItem.html" title="class in logic.entity"><code>BulletItem</code></a>,
+ <a href="../entity/QuestionMark.html" title="class in logic.entity"><code>QuestionMark</code></a>, and <a href="../entity/SpellShot.html" title="class in logic.entity"><code>SpellShot</code></a>.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -99,7 +103,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#onInteract()" class="member-name-link">onInteract</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Called when the player or a projectile enters the object's tile.</div>
+</div>
 </div>
 </div>
 </div>
@@ -119,6 +125,8 @@ loadScripts(document, 'script');</script>
 <h3>onInteract</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">onInteract</span>()</div>
+<div class="block">Called when the player or a projectile enters the object's tile.
+ Typical side effects include playing a sound and updating game state.</div>
 </div>
 </section>
 </li>

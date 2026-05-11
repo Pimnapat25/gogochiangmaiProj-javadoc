@@ -82,6 +82,12 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Pursuer</span></div>
+<div class="block">Mixin that provides greedy-chase pathfinding to a teacher.
+
+ <p>Implemented by <a href="../entity/NormalTeacher.html" title="class in logic.entity"><code>NormalTeacher</code></a> and
+ <a href="../entity/SleepyTeacher.html" title="class in logic.entity"><code>SleepyTeacher</code></a>. The default method ranks all valid
+ directions by squared Euclidean distance to the student and returns them
+ nearest-first so the caller can pick the best move.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -100,7 +106,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getTargetDirections(logic.world.Map,logic.entity.BaseTeacher)" class="member-name-link">getTargetDirections</a><wbr>(<a href="../world/Map.html" title="class in logic.world">Map</a>&nbsp;map,
  <a href="../entity/BaseTeacher.html" title="class in logic.entity">BaseTeacher</a>&nbsp;self)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Returns the teacher's valid move directions sorted by ascending distance
+ to the player, so <code>get(0)</code> is always the direction that closes the gap.</div>
+</div>
 </div>
 </div>
 </div>
@@ -121,6 +130,15 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">getTargetDirections</span><wbr><span class="parameters">(<a href="../world/Map.html" title="class in logic.world">Map</a>&nbsp;map,
  <a href="../entity/BaseTeacher.html" title="class in logic.entity">BaseTeacher</a>&nbsp;self)</span></div>
+<div class="block">Returns the teacher's valid move directions sorted by ascending distance
+ to the player, so <code>get(0)</code> is always the direction that closes the gap.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>map</code> - the current level map used for wall checks</dd>
+<dd><code>self</code> - the teacher that is doing the chasing</dd>
+<dt>Returns:</dt>
+<dd>directions sorted nearest-to-student first; never <code>null</code></dd>
+</dl>
 </div>
 </section>
 </li>

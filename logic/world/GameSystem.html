@@ -96,6 +96,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GameSystem</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Singleton that owns all mutable game state for the current play session.
+
+ <p>Holds references to the active <a href="Map.html" title="class in logic.world"><code>Map</code></a>, the <a href="../entity/Student.html" title="class in logic.entity"><code>Student</code></a>, and the
+ four synchronized entity lists (teachers, bullets, questions, spells).
+ <a href="#loadLevel(int)"><code>loadLevel(int)</code></a> resets these lists and initialises a new level.
+ <a href="#spawnTeacher()"><code>spawnTeacher()</code></a> and <a href="#spawnBullet()"><code>spawnBullet()</code></a> are called periodically
+ by the spawn loop in <a href="../../gui/screen/GamePane.html" title="class in gui.screen"><code>GamePane</code></a>.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -122,7 +129,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GameSystem.html" title="class in logic.world">GameSystem</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns the singleton instance, creating it on first call.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../entity/QuestionMark.html" title="class in logic.entity">QuestionMark</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQuestions()" class="member-name-link">getQuestions</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -143,19 +152,32 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadLevel(int)" class="member-name-link">loadLevel</a><wbr>(int&nbsp;level)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Clears all entity lists, loads the map and questions for the given level,
+ starts the level background music, and spawns the student at (1,1).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameActive(boolean)" class="member-name-link">setGameActive</a><wbr>(boolean&nbsp;active)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the game-active flag; pass <code>false</code> to signal the game loop to stop.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSelectedCharacter(logic.character.CharacterProfile)" class="member-name-link">setSelectedCharacter</a><wbr>(<a href="../character/CharacterProfile.html" title="interface in logic.character">CharacterProfile</a>&nbsp;profile)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Records the character chosen by the player before the game starts.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnBullet()" class="member-name-link">spawnBullet</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Spawns a <a href="../entity/BulletItem.html" title="class in logic.entity"><code>BulletItem</code></a> at a random item tile and adds its sprite
+ to the game board.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnTeacher()" class="member-name-link">spawnTeacher</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Spawns a random teacher at a spawner tile if fewer than 5 teachers are
+ currently active.</div>
+</div>
 </div>
 </div>
 </div>
@@ -178,6 +200,11 @@ loadScripts(document, 'script');</script>
 <h3>getInstance</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="GameSystem.html" title="class in logic.world">GameSystem</a></span>&nbsp;<span class="element-name">getInstance</span>()</div>
+<div class="block">Returns the singleton instance, creating it on first call.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the shared <code>GameSystem</code> instance</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -186,6 +213,13 @@ loadScripts(document, 'script');</script>
 <h3>loadLevel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadLevel</span><wbr><span class="parameters">(int&nbsp;level)</span></div>
+<div class="block">Clears all entity lists, loads the map and questions for the given level,
+ starts the level background music, and spawns the student at (1,1).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>level</code> - level number (1-based); used to locate <code>maps/N.txt</code>
+              and <code>questions/N.txt</code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -194,6 +228,9 @@ loadScripts(document, 'script');</script>
 <h3>spawnTeacher</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">spawnTeacher</span>()</div>
+<div class="block">Spawns a random teacher at a spawner tile if fewer than 5 teachers are
+ currently active.  Adds the teacher's sprite to the game board via
+ <a href="../../gui/screen/GamePane.html" title="class in gui.screen"><code>GamePane</code></a>.</div>
 </div>
 </section>
 </li>
@@ -202,6 +239,8 @@ loadScripts(document, 'script');</script>
 <h3>spawnBullet</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">spawnBullet</span>()</div>
+<div class="block">Spawns a <a href="../entity/BulletItem.html" title="class in logic.entity"><code>BulletItem</code></a> at a random item tile and adds its sprite
+ to the game board.</div>
 </div>
 </section>
 </li>
@@ -210,6 +249,10 @@ loadScripts(document, 'script');</script>
 <h3>getCurrentMap</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Map.html" title="class in logic.world">Map</a></span>&nbsp;<span class="element-name">getCurrentMap</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the currently loaded level map</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -218,6 +261,10 @@ loadScripts(document, 'script');</script>
 <h3>getTeachers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../entity/BaseTeacher.html" title="class in logic.entity">BaseTeacher</a>&gt;</span>&nbsp;<span class="element-name">getTeachers</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>synchronized list of active teachers</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -226,6 +273,10 @@ loadScripts(document, 'script');</script>
 <h3>getQuestions</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../entity/QuestionMark.html" title="class in logic.entity">QuestionMark</a>&gt;</span>&nbsp;<span class="element-name">getQuestions</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>synchronized list of active quest terminals</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -234,6 +285,10 @@ loadScripts(document, 'script');</script>
 <h3>getBullets</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../entity/BulletItem.html" title="class in logic.entity">BulletItem</a>&gt;</span>&nbsp;<span class="element-name">getBullets</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>synchronized list of active bullet items on the map</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -242,6 +297,10 @@ loadScripts(document, 'script');</script>
 <h3>getCurrentLevel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCurrentLevel</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>current level number (1-based)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -250,6 +309,10 @@ loadScripts(document, 'script');</script>
 <h3>getStudent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../entity/Student.html" title="class in logic.entity">Student</a></span>&nbsp;<span class="element-name">getStudent</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the player-controlled <a href="../entity/Student.html" title="class in logic.entity"><code>Student</code></a> for the current level</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -258,6 +321,10 @@ loadScripts(document, 'script');</script>
 <h3>getSpells</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../entity/SpellShot.html" title="class in logic.entity">SpellShot</a>&gt;</span>&nbsp;<span class="element-name">getSpells</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>synchronized list of in-flight <a href="../entity/SpellShot.html" title="class in logic.entity"><code>SpellShot</code></a>s</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -266,6 +333,10 @@ loadScripts(document, 'script');</script>
 <h3>isGameActive</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isGameActive</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> while the game loop should keep running</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -274,6 +345,11 @@ loadScripts(document, 'script');</script>
 <h3>setGameActive</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setGameActive</span><wbr><span class="parameters">(boolean&nbsp;active)</span></div>
+<div class="block">Sets the game-active flag; pass <code>false</code> to signal the game loop to stop.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>active</code> - <code>false</code> to end the current game session</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -282,6 +358,10 @@ loadScripts(document, 'script');</script>
 <h3>getSelectedCharacter</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../character/CharacterProfile.html" title="interface in logic.character">CharacterProfile</a></span>&nbsp;<span class="element-name">getSelectedCharacter</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the character profile selected by the player, or <code>null</code> if none chosen</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -290,6 +370,11 @@ loadScripts(document, 'script');</script>
 <h3>setSelectedCharacter</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSelectedCharacter</span><wbr><span class="parameters">(<a href="../character/CharacterProfile.html" title="interface in logic.character">CharacterProfile</a>&nbsp;profile)</span></div>
+<div class="block">Records the character chosen by the player before the game starts.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>profile</code> - the selected <a href="../character/CharacterProfile.html" title="interface in logic.character"><code>CharacterProfile</code></a></dd>
+</dl>
 </div>
 </section>
 </li>

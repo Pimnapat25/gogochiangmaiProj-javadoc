@@ -95,6 +95,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Main</span>
 <span class="extends-implements">extends javafx.application.Application</span></div>
+<div class="block">JavaFX application entry point for GoGo Chiang Mai — Escape Intania.
+
+ <p>Bootstraps the primary stage with <a href="../gui/screen/HomePane.html" title="class in gui.screen"><code>HomePane</code></a> as the initial
+ scene and owns the singleton <code>MediaPlayer</code> used for
+ looping background music throughout the game.</p></div>
 </div>
 </section>
 <section class="summary">
@@ -147,13 +152,19 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#playBackgroundMusic(java.lang.String,double)" class="member-name-link">playBackgroundMusic</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;file,
  double&nbsp;volume)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Stops any currently playing background music and starts a new track.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRoot(javafx.scene.Parent)" class="member-name-link">setRoot</a><wbr>(javafx.scene.Parent&nbsp;node)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Replaces the root of the primary scene, effectively switching screens.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(javafx.stage.Stage)" class="member-name-link">start</a><wbr>(javafx.stage.Stage&nbsp;stage)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">JavaFX lifecycle entry point — creates the scene and shows the primary stage.</div>
+</div>
 </div>
 </div>
 </div>
@@ -195,9 +206,12 @@ loadScripts(document, 'script');</script>
 <h3>start</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">start</span><wbr><span class="parameters">(javafx.stage.Stage&nbsp;stage)</span></div>
+<div class="block">JavaFX lifecycle entry point — creates the scene and shows the primary stage.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>start</code>&nbsp;in class&nbsp;<code>javafx.application.Application</code></dd>
+<dt>Parameters:</dt>
+<dd><code>stage</code> - the primary stage provided by the JavaFX runtime</dd>
 </dl>
 </div>
 </section>
@@ -207,6 +221,13 @@ loadScripts(document, 'script');</script>
 <h3>setRoot</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRoot</span><wbr><span class="parameters">(javafx.scene.Parent&nbsp;node)</span></div>
+<div class="block">Replaces the root of the primary scene, effectively switching screens.
+ Automatically restarts the home-screen music when navigating back to
+ <a href="../gui/screen/HomePane.html" title="class in gui.screen"><code>HomePane</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>node</code> - the new root pane to display</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -216,6 +237,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">playBackgroundMusic</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;file,
  double&nbsp;volume)</span></div>
+<div class="block">Stops any currently playing background music and starts a new track.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>file</code> - classpath-relative path to the audio file (e.g. <code>"/sounds/music/homeMusic.mp3"</code>)</dd>
+<dd><code>volume</code> - playback volume in the range <code>[0.0, 1.0]</code></dd>
+</dl>
 </div>
 </section>
 </li>
